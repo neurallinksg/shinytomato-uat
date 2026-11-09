@@ -4,9 +4,6 @@ gh-pages-sim/
 # Local build metadata with absolute machine paths
 LAST_UAT_BUILD.json
 
-# Mode B generator output folder (publishable copy lives at repo root)
-site/
-
 # OS / editor noise
 Thumbs.db
 Desktop.ini

@@ -1,18 +1,33 @@
-# ShinyTomatoUAT
+# shinytomato-uat
 
-Generated **GitHub Pages** preview folder for repository name `shinytomato-uat`.
+Generated **GitHub Pages** UAT preview for ShinyTomato.
 
-## Important
+**Published site URL (once Pages is enabled):** https://neurallinksg.github.io/shinytomato-uat/
 
-- Authoritative development source is **`D:\CursorProject\ShinyTomatoV2`**.
-- This folder is **not** updated during normal coding.
-- Refresh **only** when the user explicitly requests UAT preparation (e.g. `UAT test now`).
-- Publishable site files will live under `site/` after the first Mode B build.
-- Latest local Mode B build: **`site/`** (build id `20261109-223321`, 9 Nov 2026).
-- Local Pages-path preview helper: `gh-pages-sim/` (junction only; do not upload).
-- Do **not** push to GitHub or deploy to Vodien from tooling automatically.
-- Manual upload steps: `SHINYTOMATO_PROJECT_RECORDS\EVIDENCE\uat-refresh-2026-11-09\GITHUB_MANUAL_UPLOAD.md`
+## Layout
 
-Workflow guide:
+| Path | Role |
+|---|---|
+| `site/` | **Only** generated publication directory (GitHub Actions publishes its contents) |
+| `.github/workflows/uat-pages.yml` | Official Pages deploy workflow |
+| `README.md` / `.gitignore` | Repository configuration (not website content) |
+
+Do **not** keep a second copy of the website at the repository root.
+
+## Source of truth
+
+- Authoritative development: `D:\CursorProject\ShinyTomatoV2`
+- This repository is **generated**. Normal coding updates V2 only.
+- Refresh UAT only on an explicit instruction such as `UAT test now`.
+- Upload with `D:\CursorProject\Upload-ShinyTomato-UAT.cmd` (commit + push verified `site/`). Tooling never auto-deploys Vodien production.
+
+## Operator notes
+
+- Latest local Mode B build id is recorded in `site/uat-build-marker.json`.
+- Local Pages-path preview helper: `gh-pages-sim/` (gitignored junction; do not upload).
+- Private project records stay outside this repository.
+- GitHub Pages does **not** honour Apache `.htaccess`. Keep Apache checks on the separate Target B workflow.
+
+Private workflow record:
 
 `D:\CursorProject\SHINYTOMATO_PROJECT_RECORDS\26_SHINYTOMATO_V2_UAT_MANUAL_TRIGGER_WORKFLOW.md`

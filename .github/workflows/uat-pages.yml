@@ -1,0 +1,97 @@
+# Publish the generated UAT website (contents of site/) to GitHub Pages.
+# Does not publish the repository root, private records, or V2 source.
+name: Deploy UAT GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "site/**"
+      - ".github/workflows/uat-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Verify UAT publication package
+        run: |
+          set -euo pipefail
+          test -f site/index.html
+          test -f site/uat-build-marker.json
+          test -f site/_uat_manifest.json
+          test -f site/404.html
+          test -f site/favicon.ico
+          test -f site/robots.txt
+          test -d site/assets
+          test -d site/about
+          test -d site/shop-now
+          python3 - <<'PY'
+          import json, pathlib, sys
+          site = pathlib.Path("site")
+          marker = json.loads((site / "uat-build-marker.json").read_text(encoding="utf-8"))
+          for key in ("build_id", "base_path", "file_count"):
+              if key not in marker:
+                  raise SystemExit(f"marker missing {key}")
+          if marker.get("base_path") != "/shinytomato-uat":
+              raise SystemExit(f"unexpected base_path: {marker.get('base_path')}")
+          print("marker_ok", marker.get("build_id"), marker.get("file_count"))
+          PY
+
+      - name: Security gate — prohibited paths and obvious secrets
+        run: |
+          set -euo pipefail
+          FAIL=0
+          while IFS= read -r -d '' f; do
+            echo "::error file=$f::Prohibited private or backup path in site/"
+            FAIL=1
+          done < <(find site -type f \( \
+            -name '.env' -o -name '.env.*' -o -name '*.pem' -o -name '*.bak' -o \
+            -name '*.bak.*' -o -name '*.zip' -o -name '.htpasswd' -o -name '.ftpquota' -o \
+            -name 'INSTALLATION_GUIDE.txt' -o -name 'UPLOAD_INSTRUCTIONS.txt' -o \
+            -name 'README_UPLOADING.txt' -o -iname '*credential*' -o -iname '*secret*' \
+          \) -print0 2>/dev/null || true)
+          if grep -RInE --exclude-dir=.git \
+            '(AKIA[0-9A-Z]{16}|BEGIN (RSA |OPENSSH )?PRIVATE KEY|cpanel.*(pass|password)|ftp.*(pass|password))' \
+            site >/tmp/secret-hits.txt 2>/dev/null; then
+            echo "::error::Possible secret patterns found in site/"
+            cat /tmp/secret-hits.txt
+            FAIL=1
+          fi
+          if [[ "$FAIL" -ne 0 ]]; then
+            exit 1
+          fi
+          echo "security_gate_ok"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload Pages artifact (site/ contents only)
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
+
+      - name: Report published URL
+        run: |
+          echo "Published URL: ${{ steps.deployment.outputs.page_url }}"
+          echo "Expected project site: https://neurallinksg.github.io/shinytomato-uat/"

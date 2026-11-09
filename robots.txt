@@ -1,3 +1,0 @@
-User-agent: *
-Disallow: /
-# UAT for shinytomato-uat — do not index
