@@ -1,13 +1,13 @@
 {
   "mode": "build",
-  "timestamp": "2026-11-10T00:43:16.867842+08:00",
-  "candidate": "D:\\CursorProject\\SHINYTOMATO_PROJECT_RECORDS\\EVIDENCE\\uat-candidates\\candidate-20261110-004312",
+  "timestamp": "2026-11-10T00:53:00.973766+08:00",
+  "candidate": "D:\\CursorProject\\SHINYTOMATO_PROJECT_RECORDS\\EVIDENCE\\uat-candidates\\candidate-20261110-005250",
   "published_site": "D:\\CursorProject\\ShinyTomatoUAT",
   "publish_mode": "branch-root",
-  "previous_snapshot": "D:\\CursorProject\\SHINYTOMATO_BACKUPS\\uat-publish-pre-refresh-20261110-004312",
+  "previous_snapshot": "D:\\CursorProject\\SHINYTOMATO_BACKUPS\\uat-publish-pre-refresh-20261110-005250",
   "marker": {
-    "build_id": "20261110-004315",
-    "timestamp": "2026-11-10T00:43:15.137924+08:00",
+    "build_id": "20261110-005253",
+    "timestamp": "2026-11-10T00:52:53.064750+08:00",
     "base_path": "/shinytomato-uat",
     "source": "D:\\CursorProject\\ShinyTomatoV2",
     "file_count": 166
@@ -18,7 +18,7 @@
       "_uat_manifest.json"
     ],
     "changed": [
-      "automotive-concierge/index.html",
+      "index.html",
       "uat-build-marker.json"
     ],
     "unchanged_count": 165
