@@ -1,0 +1,46 @@
+SHINYTOMATO WINDOW FILMS — INSTALLATION / INTEGRATION GUIDE
+
+DELIVERABLES
+- index.html: complete standalone HTML page with self-contained CSS/JS
+- assets/hero-studio.png: AI-generated realistic automotive illustration; not a photo of Shinytomato's actual workshop
+
+RECOMMENDED LIVE URL (PRESERVE EXISTING SEARCH URL)
+https://shinytomato.com.sg/protective-film/window-film/
+
+BEFORE UPLOAD
+1. Back up your existing site's full hosting folder and database (if any).
+2. Ask Terminax SG to confirm IN WRITING local 10-year UCX coverage and any differences from supplier quotation's 5 years; confirm 5-year CXS and XIR coverage, claims process, transferability, labour coverage.
+3. Confirm whether starting prices include GST, which windows are included and vehicle size categories; revise terms accordingly.
+4. Replace text-only Shinytomato wordmark with your actual official logo image (do not recreate the original logo using AI).
+5. Replace AI-generated hero with authentic authorized studio photography when possible.
+6. Review legal, warranty, cancellation, and booking terms with management; current text is a draft, not an executed agreement.
+7. Customer service and WhatsApp number is +65 8890 9220. Test all enquiry links before publication.
+8. Check live URL for your PPF / Vinyl Wrap pages; update footer links if required.
+9. Remove the entire preview banner (<div class="preview"> ... </div>) and change meta robots from 'noindex,follow' to 'index,follow' only after approvals.
+10. Optional: update og:image absolute path if you choose another hosting path.
+
+DEPLOY TO VOIdEN / CPANEL-LIKE FILE MANAGER
+A. Open File Manager and go to your hosting document root (commonly public_html, but verify).
+B. Follow folder chain: protective-film/window-film/ .
+C. Rename existing index.html to index-backup-2026.html or back it up locally.
+D. Upload new index.html to that folder.
+E. Upload assets/hero-studio.png to protective-film/window-film/assets/ .
+F. Check https://shinytomato.com.sg/protective-film/window-film/ in desktop and phone browsers.
+G. Test navigation, LTA calculator, FAQ expanders, WhatsApp enquiry, and performance.
+H. Confirm sitemap includes the preserved URL; request indexing in Google Search Console. Avoid duplicate alternate URLs.
+
+ADD TO HOMEPAGE DROPDOWN
+Existing homepage already uses a 'Protective Films > Window Tinting' navigation item linking to this existing window-film URL.
+So if you REPLACE THE EXISTING PAGE AT THE SAME URL, the dropdown needs no new item.
+If you prefer relabelling the menu, change only anchor display text:
+<a href="/shinytomato-uat/protective-film/window-film/">Window Films &amp; Tinting</a>
+Do this in both desktop and mobile navigation templates if separate.
+If you want to add a 'Window Films' direct top-level item, use the same URL, not another duplicate page.
+
+TECHNICAL NOTES
+- 'Combined VLT' calculator is illustrative only, never an LTA approval.
+- Shade data taken from manufacturer's technical sheets supplied in chat.
+- Price list is the proposed $388 / $588 / $888 3-tier starting model.
+- This is a standalone page: do not paste entire <!doctype> document inside a CMS HTML widget. Use it as the complete HTML page or adapt the <main> and CSS to your theme.
+- No external JavaScript frameworks or fonts. Hosting is self-contained.
+- The user's existing older website may use different styles; this page is intentionally standalone.

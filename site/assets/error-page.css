@@ -1,0 +1,140 @@
+/* Shared branded error pages. Scoped so the header, footer and WhatsApp pill stay unchanged. */
+html,body{margin:0;background:#090b10}
+body{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;font:15px/1.65 Arial,Helvetica,sans-serif;color:#f5f3ef}
+.st-error{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  box-sizing:border-box;
+  display:grid;
+  place-items:center;
+  flex:1 0 auto;
+  width:100%;
+  padding:48px 24px 72px;
+  background:#090b10;
+  color:#f5f3ef;
+  font:15px/1.65 Arial,Helvetica,sans-serif;
+  text-align:center;
+}
+.st-error-glow{
+  position:absolute;
+  left:0;
+  top:18%;
+  z-index:0;
+  width:100%;
+  height:460px;
+  background:
+    radial-gradient(ellipse at 50% 45%, rgba(237,194,78,.20), transparent 58%),
+    radial-gradient(ellipse at 28% 55%, rgba(183,47,57,.18), transparent 52%),
+    radial-gradient(ellipse at 72% 55%, rgba(255,255,255,.08), transparent 46%);
+  filter:blur(6px);
+  animation:stErrorGlow 9s ease-in-out infinite alternate;
+  pointer-events:none;
+}
+.st-error-road{
+  position:absolute;
+  left:50%;
+  bottom:-8px;
+  z-index:0;
+  width:min(1100px,100%);
+  height:auto;
+  transform:translateX(-50%);
+  pointer-events:none;
+}
+.st-error-copy{
+  position:relative;
+  z-index:1;
+  width:min(760px,100%);
+  animation:stErrorIn .7s ease both;
+}
+.st-error-kicker{
+  margin:0 0 8px;
+  color:#edc24e;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+}
+.st-error-num{
+  margin:0;
+  color:#edc24e;
+  font-size:clamp(112px,22vw,228px);
+  font-weight:800;
+  letter-spacing:-.07em;
+  line-height:.82;
+}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .st-error-num{
+    background:linear-gradient(180deg,#fff 8%,#f3d789 42%,#edc24e 68%,#8d6820 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+}
+.st-error h1{
+  margin:18px 0 12px;
+  font-size:clamp(32px,4.4vw,54px);
+  font-weight:700;
+  letter-spacing:-.035em;
+  line-height:1.08;
+}
+.st-error-lead{
+  max-width:560px;
+  margin:0 auto;
+  color:#c4c6ca;
+  font-size:17px;
+}
+.st-error-actions{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+.st-error-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:49px;
+  padding:14px 22px;
+  border:1px solid transparent;
+  border-radius:4px;
+  font-size:13px;
+  font-weight:800;
+  line-height:1;
+  text-decoration:none;
+  transition:background .2s,transform .2s,border-color .2s;
+}
+.st-error-btn-gold{background:#edc24e;color:#0b0b0d}
+.st-error-btn-gold:hover{background:#f0cc66;transform:translateY(-2px)}
+.st-error-btn-outline{border-color:#ffffff55;background:#ffffff09;color:#fff}
+.st-error-btn-outline:hover{background:#ffffff19;transform:translateY(-2px)}
+.st-error a:focus,.st-error a:focus-visible{outline:2px solid #edc24e;outline-offset:3px}
+.st-error-links{
+  display:flex;
+  justify-content:center;
+  gap:8px 18px;
+  flex-wrap:wrap;
+  margin:26px 0 0;
+  padding:0;
+  list-style:none;
+}
+.st-error-links a{color:#d8d8dd;font-size:13px;font-weight:700;text-decoration:none}
+.st-error-links a:hover{color:#edc24e}
+@keyframes stErrorIn{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:none}
+}
+@keyframes stErrorGlow{
+  from{opacity:.72}
+  to{opacity:1}
+}
+@media(max-width:780px){
+  .st-error{padding:40px 18px 64px}
+  .st-error-lead{font-size:16px}
+  .st-error h1{font-size:clamp(28px,8vw,40px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .st-error-copy,.st-error-glow{animation:none}
+  .st-error-btn:hover{transform:none}
+}

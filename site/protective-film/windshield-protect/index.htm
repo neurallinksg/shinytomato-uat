@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Shinytomato - Terminax Windshield Protect Singapore</title>
+  <meta name="description"
+    content="Premium windshield protection film installation in Singapore using Terminax Windshield-X Protection Film. Help reduce rock chips, cracks, UV exposure and windshield wear with professional installation by Shinytomato." />
+
+  <link rel="icon" href="/shinytomato-uat/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/shinytomato-uat/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Poppins", "sans-serif"],
+          },
+          colors: {
+            primary: "#05060a",
+            secondary: "#0d1017",
+            panel: "#121621",
+            softpanel: "#171c28",
+            highlight: "#d83b3b",
+            muted: "#9ea4b3",
+          },
+          boxShadow: {
+            premium: "0 25px 70px rgba(0,0,0,0.45)",
+            soft: "0 16px 40px rgba(0,0,0,0.28)",
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top center, rgba(216, 59, 59, 0.10), transparent 28%),
+        linear-gradient(to bottom, #05060a, #080a10 25%, #05060a 100%);
+      color: #ffffff;
+      font-family: "Poppins", sans-serif;
+      overflow-x: hidden;
+    }
+
+    .section-shell {
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+
+    .header-glass {
+      background: linear-gradient(to bottom, rgba(5, 6, 10, 0.92), rgba(5, 6, 10, 0.18));
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .hero-overlay {
+      background:
+        radial-gradient(circle at 50% 15%, rgba(216, 59, 59, 0.20), transparent 30%),
+        linear-gradient(to bottom, rgba(5, 6, 10, 0.22), rgba(5, 6, 10, 0.78)),
+        linear-gradient(to top, rgba(5, 6, 10, 0.96), rgba(5, 6, 10, 0.10));
+    }
+
+    .premium-panel {
+      background: linear-gradient(180deg, rgba(21, 25, 35, 0.92), rgba(10, 12, 18, 0.96));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.38);
+    }
+
+    .glass-panel {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.24);
+    }
+
+    .feature-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(21, 25, 35, 0.96), rgba(10, 12, 18, 0.96));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+      transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+      height: 100%;
+    }
+
+    .feature-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(216, 59, 59, 0.10), transparent 35%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.28s ease;
+      pointer-events: none;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(216, 59, 59, 0.28);
+      box-shadow: 0 26px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .feature-card:hover::before {
+      opacity: 1;
+    }
+
+    .feature-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(216, 59, 59, 0.10);
+      border: 1px solid rgba(216, 59, 59, 0.30);
+      box-shadow: inset 0 0 20px rgba(216, 59, 59, 0.06);
+      flex-shrink: 0;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(8px);
+      transition: opacity 0.18s ease, visibility 0.18s ease, transform 0.18s ease;
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      min-width: 280px;
+      background: #11141c;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      padding: 8px 0;
+      z-index: 70;
+    }
+
+    .nav-item:hover>.dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .dropdown-menu::before {
+      content: "";
+      position: absolute;
+      top: -14px;
+      left: 0;
+      width: 100%;
+      height: 14px;
+    }
+
+    .menu-link {
+      display: block;
+      padding: 12px 16px;
+      color: rgba(255, 255, 255, 0.9);
+      transition: background 0.18s ease;
+      white-space: nowrap;
+    }
+
+    .menu-link:hover {
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    #wa-float-button {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 9999;
+      font-family: Arial, sans-serif;
+    }
+
+    #wa-float-button a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-direction: row;
+    }
+
+    .wa-icon {
+      width: 60px;
+      height: 60px;
+      background: #2db742;
+      border-radius: 999px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s ease;
+    }
+
+    .wa-icon img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .wa-label {
+      background: #2db742;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 999px;
+      margin-right: 10px;
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateX(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      font-size: 14px;
+    }
+
+    #wa-float-button a:hover .wa-label {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    @media (max-width: 1024px) {
+      .desktop-nav {
+        display: none !important;
+      }
+
+      .mobile-nav-toggle {
+        display: flex !important;
+      }
+    }
+
+    @media (min-width: 1025px) {
+      .mobile-nav-toggle,
+      .mobile-menu {
+        display: none !important;
+      }
+    }
+  </style>
+<link rel="stylesheet" href="/shinytomato-uat/assets/site-header.css?v=20261109-align-418c1a567ae3">
+</head>
+
+<body class="font-sans text-white">
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"AutoDetailing",
+    "name":"Shinytomato",
+    "image":"https://shinytomato.com.sg/images/logo.png",
+    "url":"https://shinytomato.com.sg/",
+    "telephone":"+65 8890 9220",
+    "email":"admin@shinytomato.com.sg",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"1 Jalan Kilang Barat, One@Redhill Centre, #01-02",
+      "addressLocality":"Singapore",
+      "postalCode":"159345",
+      "addressCountry":"SG"
+    }
+  }
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const mobileToggle = document.getElementById("mobileToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      if (mobileToggle && mobileMenu) {
+        mobileToggle.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+      }
+    });
+
+    function toggleMobileDropdown(id) {
+      const target = document.getElementById(id);
+      if (target) target.classList.toggle("hidden");
+    }
+  </script>
+
+  <!-- HEADER / HERO -->
+  <header class="st-site-header"><div class="st-topline"></div><div class="st-wrap st-nav-wrap"><a href="/shinytomato-uat/" class="st-brand" aria-label="Shinytomato home"><img src="/shinytomato-uat/images/site-header-logo.png" alt="Official Shinytomato Surface Protection Specialist logo"></a><button class="st-menu-btn" id="stMenuToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="stMainNav">☰</button><nav id="stMainNav" class="st-nav" aria-label="Main navigation"><a href="/shinytomato-uat/about/">About Us</a><div class="st-group"><button type="button" class="st-group-toggle" aria-expanded="false" aria-haspopup="true">Services <span aria-hidden="true">⌄</span></button><div class="st-dropdown" aria-label="Automotive protection services"><a href="/shinytomato-uat/protective-film/paint-protection-film.html">Paint Protection Film (PPF)</a><a href="/shinytomato-uat/protective-film/vinyl-wrapping.html">Vinyl Wrapping</a><a href="/shinytomato-uat/protective-film/window-film/">Window Tinting</a><a href="/shinytomato-uat/protective-film/sunroof-headshield/">Sunroof Heat Shield</a><a href="/shinytomato-uat/polish-coat/">Ceramic Coating</a><a href="/shinytomato-uat/grooming/">Grooming</a></div></div><a href="/shinytomato-uat/shop-now/">Shop Now</a><a href="/shinytomato-uat/corporate/">Corporate</a><a href="/shinytomato-uat/events/">Events</a><a href="/shinytomato-uat/promotions/">Promotions</a><div class="st-group"><button type="button" class="st-group-toggle" aria-expanded="false" aria-haspopup="true">Others <span aria-hidden="true">⌄</span></button><div class="st-dropdown" aria-label="Automotive concierge services"><a href="/shinytomato-uat/automotive-concierge/">Automotive Concierge</a><a href="/shinytomato-uat/automotive-concierge/#sell">Sell Your Car</a><a href="/shinytomato-uat/automotive-concierge/#insurance">Motor Insurance</a><a href="/shinytomato-uat/automotive-concierge/#workshop">Workshops &amp; Servicing</a><a href="/shinytomato-uat/automotive-concierge/#paint">Paint &amp; Bodywork</a><a href="/shinytomato-uat/automotive-concierge/#finance">Car Financing</a><a href="/shinytomato-uat/automotive-concierge/#dent">Dent Repair</a><a href="/shinytomato-uat/automotive-concierge/#glass">Windscreen &amp; Glass</a><a href="/shinytomato-uat/automotive-concierge/#leather">Leather &amp; Interior</a></div></div></nav><a class="st-nav-cta" href="https://wa.me/6588909220" target="_blank" rel="noopener">WhatsApp Enquiry ↗</a></div><div class="st-social"><div class="st-wrap st-social-inner"><span class="st-social-caption">Follow Shinytomato</span><div class="st-social-links"><a class="st-social-link" href="https://www.facebook.com/shinytomatoservices" target="_blank" rel="noopener noreferrer" aria-label="Follow Shinytomato on Facebook"><span class="st-social-icon" aria-hidden="true">f</span><span>Facebook</span></a><a class="st-social-link" href="https://www.instagram.com/shinytomatoservices/" target="_blank" rel="noopener noreferrer" aria-label="Follow Shinytomato on Instagram"><span class="st-social-icon" aria-hidden="true">◎</span><span>Instagram</span></a><a class="st-social-link" href="https://www.tiktok.com/@shinytomatosg" target="_blank" rel="noopener noreferrer" aria-label="Follow Shinytomato on TikTok"><span class="st-social-icon" aria-hidden="true">♪</span><span>TikTok</span></a></div></div></div></header><header class="relative overflow-hidden min-h-[82vh] md:min-h-[92vh]"><h1 class="st-legacy-title text-2xl md:text-3xl font-bold tracking-tight">
+          <a href="/shinytomato-uat/">shinytomato<span class="text-highlight">.</span></a>
+        </h1>
+    <div class="absolute inset-0 z-0">
+      <img src="/shinytomato-uat/images/ppf-projects/porsche-macan-studio-singapore.webp" alt="Terminax cover on a windscreen in the Shinytomato studio"
+        class="w-full h-full object-cover" fetchpriority="high" />
+    </div>
+    <div class="absolute inset-0 hero-overlay z-10"></div>
+
+    
+
+    <!-- HERO BODY -->
+    <div class="relative z-20 min-h-[82vh] md:min-h-[92vh] flex items-center">
+      <div class="section-shell w-full px-6 md:px-10 lg:px-12 pt-28 md:pt-32 pb-14">
+        <div class="max-w-5xl">
+          <div
+            class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs sm:text-sm text-white/80 mb-6 shadow-soft">
+            <span class="w-2 h-2 rounded-full bg-highlight inline-block"></span>
+            Terminax Windshield-X protection film
+          </div>
+
+          <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.03] tracking-tight max-w-5xl">
+            Clear windshield protection,
+            <span class="text-highlight">extra impact defense</span>
+            and smarter protection
+            for costly front glass.
+          </h2>
+
+          <p class="mt-6 text-white/75 text-base sm:text-lg md:text-xl max-w-4xl leading-relaxed">
+            Windshield protection is not the same as normal window tinting. It is a dedicated protection layer designed
+            to help shield the front glass from road debris, stone chips, minor impact stress and UV exposure while
+            maintaining high clarity for daily driving.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="#windshield-benefits"
+              class="inline-flex items-center justify-center rounded-xl bg-white text-black px-6 py-3 font-semibold hover:scale-[1.02] transition">
+              Explore Benefits
+            </a>
+            <a href="https://wa.me/6588909220" target="_blank"
+              class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white hover:bg-white/10 transition">
+              WhatsApp 88909220
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 max-w-4xl">
+            <div class="glass-panel rounded-2xl px-5 py-4">
+              <p class="text-xs uppercase tracking-[0.18em] text-white/45">Protection</p>
+              <p class="text-lg font-semibold mt-2">Road Debris Defense</p>
+            </div>
+            <div class="glass-panel rounded-2xl px-5 py-4">
+              <p class="text-xs uppercase tracking-[0.18em] text-white/45">Clarity</p>
+              <p class="text-lg font-semibold mt-2">89% VLT</p>
+            </div>
+            <div class="glass-panel rounded-2xl px-5 py-4">
+              <p class="text-xs uppercase tracking-[0.18em] text-white/45">Material</p>
+              <p class="text-lg font-semibold mt-2">4 mil PET Film</p>
+            </div>
+            <div class="glass-panel rounded-2xl px-5 py-4">
+              <p class="text-xs uppercase tracking-[0.18em] text-white/45">Protection</p>
+              <p class="text-lg font-semibold mt-2">UV Blocking</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SPECIALISED POSITIONING -->
+  <section class="py-16 md:py-24 px-6 md:px-10 lg:px-12">
+    <div class="section-shell">
+      <div class="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-10 items-stretch">
+        <div class="premium-panel rounded-[32px] p-7 md:p-9 lg:p-10">
+          <p class="text-highlight font-semibold tracking-wide uppercase text-sm mb-3">Why Windshield Protect Matters</p>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-5">
+            Front glass is expensive,
+            <span class="text-white/70">and vulnerable every day.</span>
+          </h2>
+          <div class="space-y-4 text-white/70 text-base md:text-lg leading-relaxed">
+            <p>
+              The windscreen is constantly exposed to stones, grit, road debris, high-speed impact stress, wiper wear
+              and daily UV exposure.
+            </p>
+            <p>
+              For many modern vehicles, windscreen replacement is no longer simple or cheap. Sensor-equipped glass,
+              ADAS recalibration and premium car parts can make replacement significantly more costly.
+            </p>
+            <p>
+              That is why windshield protection film is better positioned as a preventive protection upgrade rather than
+              a repair-after-damage solution.
+            </p>
+          </div>
+        </div>
+
+        <div class="glass-panel rounded-[32px] p-7 md:p-9 lg:p-10">
+          <p class="text-highlight font-semibold tracking-wide uppercase text-sm mb-3">Terminax Windshield-X</p>
+          <h3 class="text-2xl sm:text-3xl font-bold leading-tight mb-5">
+            Clear protection,
+            <span class="text-white/70">without changing the glass look.</span>
+          </h3>
+          <div class="space-y-4 text-white/70 text-base leading-relaxed">
+            <p>Terminax positions Windshield-X as a high-performance PET film that helps protect the windscreen from impacts, road debris and UV damage.</p>
+            <p>It is designed to stay crystal clear and nearly invisible while helping to reduce the risk of chips and crack formation from everyday driving hazards.</p>
+            <p>When properly installed, Terminax states that it does not impair driver visibility. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section id="windshield-benefits" class="py-16 md:py-24 px-6 md:px-10 lg:px-12 bg-[#080b12] border-y border-white/5">
+    <div class="section-shell">
+      <div class="max-w-4xl mb-12">
+        <p class="text-highlight font-semibold tracking-wide uppercase text-sm mb-3">Key Benefits</p>
+        <h2 class="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight">
+          More than clarity,
+          <span class="text-white/70">it is impact-focused protection.</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
+        <div class="feature-card rounded-[28px] p-6">
+          <div class="feature-icon mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 3c3 4 6 7 6 10a6 6 0 1 1-12 0c0-3 3-6 6-10Z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Impact Resistance</h3>
+          <p class="text-white/70 text-sm leading-relaxed">
+            Helps absorb and deflect minor impact force from stones, gravel and everyday road debris before it reaches the glass directly.
+          </p>
+        </div>
+
+        <div class="feature-card rounded-[28px] p-6">
+          <div class="feature-icon mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M4 5h16v14H4zM4 10h16"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">High Optical Clarity</h3>
+          <p class="text-white/70 text-sm leading-relaxed">
+            Published at 89% VLT, it is designed to remain clear and nearly invisible instead of adding a heavy tinted look to the front glass.
+          </p>
+        </div>
+
+        <div class="feature-card rounded-[28px] p-6">
+          <div class="feature-icon mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 2v20M5 12h14"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">UV Protection</h3>
+          <p class="text-white/70 text-sm leading-relaxed">
+            Terminax lists UV rejection above 99%, helping reduce interior fading and additional UV exposure for occupants.
+          </p>
+        </div>
+
+        <div class="feature-card rounded-[28px] p-6">
+          <div class="feature-icon mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M5 12h14M9 8l-4 4 4 4m6-8 4 4-4 4"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Lower Replacement Risk</h3>
+          <p class="text-white/70 text-sm leading-relaxed">
+            By helping reduce chip and crack risk, the film can lower the chance of premature windscreen repair or replacement.
+          </p>
+        </div>
+
+        <div class="feature-card rounded-[28px] p-6">
+          <div class="feature-icon mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M5 12l4 4L19 6"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Better Value for Premium Cars</h3>
+          <p class="text-white/70 text-sm leading-relaxed">
+            Especially relevant for luxury cars, ADAS-equipped vehicles and models with high windscreen replacement cost.
+          </p>
+        </div>
+
+        <div class="feature-card rounded-[28px] p-6">
+          <div class="feature-icon mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M4 7h16M6 7l2 10h8l2-10M9 7V5h6v2"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Daily Usability</h3>
+          <p class="text-white/70 text-sm leading-relaxed">
+            Terminax notes that wiper use is acceptable, provided the windscreen is not dry or dirty and harsh maintenance is avoided.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT PERFORMANCE -->
+  <section class="py-16 md:py-24 px-6 md:px-10 lg:px-12">
+    <div class="section-shell">
+      <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8 lg:gap-10 items-stretch">
+        <div class="glass-panel rounded-[32px] p-7 md:p-9 lg:p-10">
+          <p class="text-highlight font-semibold tracking-wide uppercase text-sm mb-3">Terminax Windshield-X WS100</p>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-5">
+            Dedicated windshield film,
+            <span class="text-white/70">not ordinary tint film.</span>
+          </h2>
+          <div class="space-y-4 text-white/70 text-base md:text-lg leading-relaxed">
+            <p>
+              Terminax describes Windshield-X as a 4 mil PET film created for impact protection, UV defense and long-term optical clarity.
+            </p>
+            <p>
+              The product page also highlights quick-shrink installation behavior, easier fitment compared with some traditional protective systems and a design intended to preserve the original appearance of the glass.
+            </p>
+            <p>
+              In practical terms, it is best understood as a sacrificial clear protective layer for the windscreen.
+            </p>
+          </div>
+        </div>
+
+        <div class="premium-panel rounded-[32px] p-7 md:p-9 lg:p-10">
+          <p class="text-highlight font-semibold tracking-wide uppercase text-sm mb-3">Published Specs</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="glass-panel rounded-2xl p-5">
+              <p class="text-sm text-white/50">Film Thickness</p>
+              <h4 class="text-2xl font-semibold mt-2">4 mil</h4>
+              <p class="text-white/65 text-sm mt-2">PET impact-focused construction.</p>
+            </div>
+            <div class="glass-panel rounded-2xl p-5">
+              <p class="text-sm text-white/50">VLT</p>
+              <h4 class="text-2xl font-semibold mt-2">89%</h4>
+              <p class="text-white/65 text-sm mt-2">Keeps the front glass visually clear.</p>
+            </div>
+            <div class="glass-panel rounded-2xl p-5">
+              <p class="text-sm text-white/50">TSER</p>
+              <h4 class="text-2xl font-semibold mt-2">10%</h4>
+              <p class="text-white/65 text-sm mt-2">This product is protection-focused, not heat-focused.</p>
+            </div>
+            <div class="glass-panel rounded-2xl p-5">
+              <p class="text-sm text-white/50">UV Rejection</p>
+              <h4 class="text-2xl font-semibold mt-2">&gt;99%</h4>
+              <p class="text-white/65 text-sm mt-2">Helps reduce UV exposure and interior fading.</p>
+            </div>
+            <div class="glass-panel rounded-2xl p-5">
+              <p class="text-sm text-white/50">IR Rejection</p>
+              <h4 class="text-2xl font-semibold mt-2">12%</h4>
+              <p class="text-white/65 text-sm mt-2">This is not a heat-control windshield tint product.</p>
+            </div>
+            <div class="glass-panel rounded-2xl p-5">
+              <p class="text-sm text-white/50">Warranty</p>
+              <h4 class="text-2xl font-semibold mt-2">18 Months</h4>
+              <p class="text-white/65 text-sm mt-2">Terminax-listed product warranty period.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPORTANT EXPLANATION -->
+  <section class="py-16 md:py-24 px-6 md:px-10 lg:px-12 bg-[#080b12] border-y border-white/5">
+    <div class="section-shell">
+      <div class="max-w-4xl mb-12">
+        <p class="text-highlight font-semibold tracking-wide uppercase text-sm mb-3">Important To Understand</p>
+        <h2 class="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight">
+          Windshield Protect is for
+          <span class="text-white/70">glass protection, not strong heat rejection.</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="feature-card rounded-[28px] p-6">
+          <h3 class="text-xl font-bold mb-3">Best For</h3>
+          <p class="text-white/70 text-sm leading-relaxed">
+            Drivers who want added defense against road debris, stone chips, minor impact stress and premature windscreen damage.
+          </p>
+        </div>
+
+        <div class="feature-card rounded-[28px] p-6">
+          <h3 class="text-xl font-bold mb-3">Not The Same As</h3>
+          <p class="text-white/70 text-sm leading-relaxed">
+            A ceramic heat-rejection front windscreen film. If your priority is cabin heat reduction, that is a different film category.
+          </p>
+        </div>
+
+        <div class="feature-card rounded-[28px] p-6">
+          <h3 class="text-xl font-bold mb-3">Smart Positioning</h3>
+          <p class="text-white/70 text-sm leading-relaxed">
+            Think of this as a clear sacrificial layer for the front glass, especially useful for premium daily drivers and highway cars.
+          </p>
+        </div>
+
+        <div class="feature-card rounded-[28px] p-6">
+          <h3 class="text-xl font-bold mb-3">Good Add-On Pairing</h3>
+          <p class="text-white/70 text-sm leading-relaxed">
+            It pairs well with normal side and rear window tinting, coating and other protective film services for a more complete protection package.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT SUITS -->
+  <section class="py-16 md:py-24 px-6 md:px-10 lg:px-12">
+    <div class="section-shell">
+      <div class="max-w-4xl mb-12">
+        <p class="text-highlight font-semibold tracking-wide uppercase text-sm mb-3">Who It Suits</p>
+        <h2 class="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight">
+          Especially suitable for
+          <span class="text-white/70">high-value and high-exposure vehicles.</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
+        <div class="feature-card rounded-[28px] p-6">
+          <h3 class="text-xl font-bold mb-3">Luxury Cars</h3>
+          <p class="text-white/70 text-sm leading-relaxed">
+            Where windscreen replacement cost can be much higher due to premium parts and integrated technology.
+          </p>
+        </div>
+
+        <div class="feature-card rounded-[28px] p-6">
+          <h3 class="text-xl font-bold mb-3">Highway Drivers</h3>
+          <p class="text-white/70 text-sm leading-relaxed">
+            More front-glass exposure to stones, grit and high-speed road debris.
+          </p>
+        </div>
+
+        <div class="feature-card rounded-[28px] p-6">
+          <h3 class="text-xl font-bold mb-3">Fleet & Daily Use Cars</h3>
+          <p class="text-white/70 text-sm leading-relaxed">
+            Useful for vehicles that spend more time on the road and face more routine wear.
+          </p>
+        </div>
+
+        <div class="feature-card rounded-[28px] p-6">
+          <h3 class="text-xl font-bold mb-3">Off-Road / Utility Vehicles</h3>
+          <p class="text-white/70 text-sm leading-relaxed">
+            Extra protection where impact exposure and rougher operating conditions are more common.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-24 px-6 md:px-10 lg:px-12 bg-[#080b12] border-y border-white/5">
+    <div class="section-shell">
+      <div class="premium-panel rounded-[32px] p-8 md:p-10 lg:p-12 text-center">
+        <p class="text-highlight font-semibold tracking-wide uppercase text-sm mb-3">Need Recommendation</p>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-5">
+          Protect your front glass
+          <span class="text-white/70">before damage happens.</span>
+        </h2>
+        <p class="text-white/65 text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-8">
+          If you want to reduce the chance of costly stone chips and windscreen damage, contact us and we will advise
+          whether Terminax Windshield-X is suitable for your vehicle and driving pattern.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://wa.me/6588909220" target="_blank"
+            class="inline-flex items-center justify-center rounded-xl bg-white text-black px-6 py-3 font-semibold hover:scale-[1.02] transition">
+            WhatsApp +65 8890 9220
+          </a>
+          <a href="tel:+6588909220"
+            class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white hover:bg-white/10 transition">
+            Call Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="st-site-footer"><div class="st-footer-inner"><a class="st-footer-brand" href="/shinytomato-uat/" aria-label="Shinytomato home"><img src="/shinytomato-uat/images/site-header-logo.png" alt="Shinytomato official logo"></a><div><div class="st-footer-links"><a href="/shinytomato-uat/protective-film/paint-protection-film.html">PPF</a><a href="/shinytomato-uat/protective-film/window-film/">Window Tint</a><a href="/shinytomato-uat/polish-coat/">Eco-Posh</a><a href="/shinytomato-uat/protective-film/vinyl-wrapping.html">Vinyl Wrap</a><a href="/shinytomato-uat/events/">Events</a><a href="/shinytomato-uat/automotive-concierge/">Automotive Concierge</a><a href="mailto:admin@shinytomato.com.sg">Email</a></div><div class="st-footer-social" aria-label="Shinytomato social media profiles"><a href="https://www.facebook.com/shinytomatoservices" target="_blank" rel="noopener noreferrer" aria-label="Follow Shinytomato on Facebook"><span class="st-footer-icon" aria-hidden="true">f</span><span>Facebook</span></a><a href="https://www.instagram.com/shinytomatoservices/" target="_blank" rel="noopener noreferrer" aria-label="Follow Shinytomato on Instagram"><span class="st-footer-icon" aria-hidden="true">◎</span><span>Instagram</span></a><a href="https://www.tiktok.com/@shinytomatosg" target="_blank" rel="noopener noreferrer" aria-label="Follow Shinytomato on TikTok"><span class="st-footer-icon" aria-hidden="true">♪</span><span>TikTok</span></a></div><small class="st-footer-address">1 Jalan Kilang Barat, One@Redhill Centre, #01-02, Singapore 159345</small><small class="st-footer-copy">© <span id="year">2026</span> Shinytomato Surface Protection Specialist · Singapore</small></div></div></footer>
+
+  <!-- FLOATING WHATSAPP -->
+  
+
+<script src="/shinytomato-uat/assets/site-header.js" defer></script><script type="module" src="/shinytomato-uat/assets/smooth-scroll.js?v=20261109-anchor-a75461ebe934"></script>
+<a class="st-wa-float" href="https://wa.me/6588909220" target="_blank" rel="noopener" aria-label="WhatsApp Shinytomato">WhatsApp ↗</a>
+</body>
+
+</html>

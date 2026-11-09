@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en" x-data="servicePage()" x-init="init()">
+
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shinytomato - Services</title>
+  <link rel="icon" href="/shinytomato-uat/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/shinytomato-uat/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Poppins", "sans-serif"],
+          },
+          colors: {
+            primary: "#04050b",
+            secondary: "#101010",
+            accent: "#DD4242",
+            highlight: "#B82828",
+            white: "#F9F9F9",
+          },
+          boxShadow: {
+            soft: "0 20px 60px rgba(0,0,0,0.35)",
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #04050b;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .dropdown-menu,
+    .sub-dropdown-menu {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: all 0.25s ease;
+    }
+
+    .nav-item:hover>.dropdown-menu,
+    .sub-dropdown:hover>.sub-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .sub-dropdown {
+      position: relative;
+    }
+
+    .sub-dropdown-menu {
+      position: absolute;
+      left: 100%;
+      top: 0;
+      margin-left: 8px;
+      min-width: 240px;
+    }
+
+    .glass-dark {
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-overlay {
+      background:
+        linear-gradient(to bottom, rgba(4, 5, 11, 0.75), rgba(4, 5, 11, 0.2)),
+        linear-gradient(to top, rgba(4, 5, 11, 0.95), rgba(4, 5, 11, 0.2));
+    }
+
+    #wa-float-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 9999;
+      font-family: Arial, sans-serif;
+    }
+
+    #wa-float-button a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-direction: row;
+    }
+
+    .wa-icon {
+      width: 60px;
+      height: 60px;
+      background-color: #2db742;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .wa-icon img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .wa-label {
+      background-color: #2db742;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 20px;
+      margin-right: 10px;
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateX(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      font-size: 14px;
+    }
+
+    #wa-float-button a:hover .wa-label {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    [x-cloak] {
+      display: none !important;
+    }
+
+    @media (max-width: 1024px) {
+
+      .dropdown-menu,
+      .sub-dropdown-menu {
+        display: none !important;
+      }
+    }
+  </style>
+<link rel="stylesheet" href="/shinytomato-uat/assets/site-header.css?v=20261109-align-418c1a567ae3">
+</head>
+
+<body class="bg-primary text-white font-sans">
+  <!-- Header -->
+  <header class="st-site-header"><div class="st-topline"></div><div class="st-wrap st-nav-wrap"><a href="/shinytomato-uat/" class="st-brand" aria-label="Shinytomato home"><img src="/shinytomato-uat/images/site-header-logo.png" alt="Official Shinytomato Surface Protection Specialist logo"></a><button class="st-menu-btn" id="stMenuToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="stMainNav">☰</button><nav id="stMainNav" class="st-nav" aria-label="Main navigation"><a href="/shinytomato-uat/about/">About Us</a><div class="st-group"><button type="button" class="st-group-toggle" aria-expanded="false" aria-haspopup="true">Services <span aria-hidden="true">⌄</span></button><div class="st-dropdown" aria-label="Automotive protection services"><a href="/shinytomato-uat/protective-film/paint-protection-film.html">Paint Protection Film (PPF)</a><a href="/shinytomato-uat/protective-film/vinyl-wrapping.html">Vinyl Wrapping</a><a href="/shinytomato-uat/protective-film/window-film/">Window Tinting</a><a href="/shinytomato-uat/protective-film/sunroof-headshield/">Sunroof Heat Shield</a><a href="/shinytomato-uat/polish-coat/">Ceramic Coating</a><a href="/shinytomato-uat/grooming/">Grooming</a></div></div><a href="/shinytomato-uat/shop-now/">Shop Now</a><a href="/shinytomato-uat/corporate/">Corporate</a><a href="/shinytomato-uat/events/">Events</a><a href="/shinytomato-uat/promotions/">Promotions</a><div class="st-group"><button type="button" class="st-group-toggle" aria-expanded="false" aria-haspopup="true">Others <span aria-hidden="true">⌄</span></button><div class="st-dropdown" aria-label="Automotive concierge services"><a href="/shinytomato-uat/automotive-concierge/">Automotive Concierge</a><a href="/shinytomato-uat/automotive-concierge/#sell">Sell Your Car</a><a href="/shinytomato-uat/automotive-concierge/#insurance">Motor Insurance</a><a href="/shinytomato-uat/automotive-concierge/#workshop">Workshops &amp; Servicing</a><a href="/shinytomato-uat/automotive-concierge/#paint">Paint &amp; Bodywork</a><a href="/shinytomato-uat/automotive-concierge/#finance">Car Financing</a><a href="/shinytomato-uat/automotive-concierge/#dent">Dent Repair</a><a href="/shinytomato-uat/automotive-concierge/#glass">Windscreen &amp; Glass</a><a href="/shinytomato-uat/automotive-concierge/#leather">Leather &amp; Interior</a></div></div></nav><a class="st-nav-cta" href="https://wa.me/6588909220" target="_blank" rel="noopener">WhatsApp Enquiry ↗</a></div><div class="st-social"><div class="st-wrap st-social-inner"><span class="st-social-caption">Follow Shinytomato</span><div class="st-social-links"><a class="st-social-link" href="https://www.facebook.com/shinytomatoservices" target="_blank" rel="noopener noreferrer" aria-label="Follow Shinytomato on Facebook"><span class="st-social-icon" aria-hidden="true">f</span><span>Facebook</span></a><a class="st-social-link" href="https://www.instagram.com/shinytomatoservices/" target="_blank" rel="noopener noreferrer" aria-label="Follow Shinytomato on Instagram"><span class="st-social-icon" aria-hidden="true">◎</span><span>Instagram</span></a><a class="st-social-link" href="https://www.tiktok.com/@shinytomatosg" target="_blank" rel="noopener noreferrer" aria-label="Follow Shinytomato on TikTok"><span class="st-social-icon" aria-hidden="true">♪</span><span>TikTok</span></a></div></div></div></header><header class="relative min-h-[88vh] overflow-hidden"><h1 class="st-legacy-title text-2xl md:text-3xl font-bold">
+        <a href="/shinytomato-uat/">shinytomato<span class="text-highlight">.</span></a>
+      </h1>
+    <div class="absolute inset-0">
+      <img src="/shinytomato-uat/images/ppf-projects/automotive-film-application-shinytomato.webp" alt="Shinytomato technicians applying paint protection film"
+        class="w-full h-full object-cover">
+    </div>
+    <div class="absolute inset-0 hero-overlay"></div>
+
+    <!-- NAV -->
+    
+
+    <!-- Hero Content -->
+    <div class="relative z-10 min-h-[88vh] px-6 md:px-16 flex items-center">
+      <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-center pt-24">
+        <div>
+          <p class="uppercase tracking-[0.25em] text-white/60 text-xs sm:text-sm mb-5">ShinyTomato Services</p>
+          <h2 class="text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight">
+            Select a service<span class="text-highlight">.</span>
+          </h2>
+          <p class="mt-6 text-white/75 text-base sm:text-lg max-w-2xl">
+            Premium detailing, coatings, wrapping and protection solutions tailored to your vehicle, your finish expectation and your maintenance goals.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a :href="selectedService.whatsapp || 'https://wa.me/6588909220'" target="_blank"
+              class="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-xl font-semibold hover:scale-105 transition">
+              Get a Quote (WhatsApp)
+            </a>
+            <a href="#portfolio"
+              class="inline-flex items-center gap-2 border border-white/20 px-6 py-3 rounded-xl font-semibold hover:bg-white/10 transition">
+              View Portfolio
+            </a>
+          </div>
+
+          <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl">
+            <div class="glass-dark rounded-2xl p-5">
+              <p class="text-white/50 text-sm">Operating Hours</p>
+              <p class="mt-2 font-semibold">Mon–Sat, 9am–5pm</p>
+            </div>
+            <div class="glass-dark rounded-2xl p-5">
+              <p class="text-white/50 text-sm">Response</p>
+              <p class="mt-2 font-semibold">Fast WhatsApp reply</p>
+            </div>
+            <div class="glass-dark rounded-2xl p-5">
+              <p class="text-white/50 text-sm">Contact</p>
+              <a href="https://wa.me/6588909220" target="_blank" class="mt-2 block font-semibold hover:underline">+65 8890 9220</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Selector Card -->
+        <div class="glass-dark rounded-[28px] p-5 sm:p-7 shadow-soft">
+          <p class="text-white/50 text-sm uppercase tracking-[0.2em] mb-4">Select a service</p>
+
+          <div class="space-y-4">
+            <label class="block">
+              <span class="text-sm text-white/60">Choose service</span>
+              <select x-model="selectedKey"
+                class="mt-2 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-4 text-white outline-none"
+                @change="updateService()">
+                <template x-for="item in services" :key="item.key">
+                  <option :value="item.key" x-text="item.name" class="text-black"></option>
+                </template>
+              </select>
+            </label>
+
+            <div class="rounded-2xl overflow-hidden border border-white/10">
+              <img :src="selectedService.image" :alt="selectedService.name" class="w-full h-64 object-cover">
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-bold" x-text="selectedService.name"></h3>
+              <p class="text-white/70 mt-3 leading-relaxed" x-text="selectedService.description"></p>
+            </div>
+
+            <div class="flex flex-wrap gap-3 pt-2">
+              <a :href="selectedService.link"
+                class="inline-flex items-center justify-center bg-white text-black px-5 py-3 rounded-xl font-semibold hover:scale-105 transition">
+                Open Service Page
+              </a>
+              <a :href="selectedService.whatsapp || 'https://wa.me/6588909220'" target="_blank"
+                class="inline-flex items-center justify-center border border-white/15 px-5 py-3 rounded-xl font-semibold hover:bg-white/10 transition">
+                WhatsApp for Quote
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Packages -->
+  <section id="packages" class="px-6 md:px-16 py-20 bg-primary">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+        <div>
+          <p class="text-white/50 uppercase tracking-[0.25em] text-xs mb-3">Packages</p>
+          <h3 class="text-3xl sm:text-5xl font-bold">
+            <span x-text="selectedService.name"></span> Packages
+          </h3>
+        </div>
+        <a :href="selectedService.whatsapp || 'https://wa.me/6588909220'" target="_blank"
+          class="inline-flex items-center justify-center bg-white text-black px-5 py-3 rounded-xl font-semibold hover:scale-105 transition">
+          Get Quote on WhatsApp
+        </a>
+      </div>
+
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <template x-for="pkg in selectedService.packages" :key="pkg.title">
+          <div class="glass-dark rounded-[26px] p-6 flex flex-col">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <p class="text-white/45 text-sm">Package</p>
+                <h4 class="text-2xl font-bold mt-2" x-text="pkg.title"></h4>
+              </div>
+              <span class="text-xs px-3 py-1 rounded-full bg-white/8 border border-white/10" x-text="pkg.tag"></span>
+            </div>
+
+            <p class="text-white/70 mt-4 leading-relaxed" x-text="pkg.description"></p>
+
+            <ul class="mt-5 space-y-3">
+              <template x-for="feature in pkg.features" :key="feature">
+                <li class="flex items-start gap-3 text-white/80">
+                  <span class="mt-2 w-2 h-2 rounded-full bg-highlight shrink-0"></span>
+                  <span x-text="feature"></span>
+                </li>
+              </template>
+            </ul>
+
+            <div class="mt-6 pt-5 border-t border-white/10 flex items-center justify-between gap-4">
+              <span class="text-white/45 text-sm" x-text="pkg.note || 'Tap to view details'"></span>
+              <a :href="selectedService.link"
+                class="inline-flex items-center gap-2 text-white font-semibold hover:opacity-80">
+                Open →
+              </a>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="px-6 md:px-16 py-20 bg-primary">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+        <div>
+          <p class="text-white/50 uppercase tracking-[0.25em] text-xs mb-3">Portfolio</p>
+          <h3 class="text-3xl sm:text-5xl font-bold">Recent Work —</h3>
+          <p class="text-white/65 mt-4">Click any photo to enlarge.</p>
+        </div>
+        <a href="https://wa.me/6588909220" target="_blank"
+          class="inline-flex items-center justify-center border border-white/15 px-5 py-3 rounded-xl font-semibold hover:bg-white/10 transition">
+          Book Appointment
+        </a>
+      </div>
+
+      <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-5">
+        <template x-for="(photo, index) in selectedService.portfolio" :key="index">
+          <button @click="openLightbox(index)"
+            class="group relative overflow-hidden rounded-[24px] border border-white/10 bg-white/5">
+            <img :src="photo" alt="Portfolio Preview"
+              class="w-full h-[280px] object-cover transition duration-500 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80"></div>
+            <div class="absolute bottom-4 left-4 text-left">
+              <p class="text-sm text-white/60">Portfolio Preview</p>
+              <p class="font-semibold">Click to enlarge</p>
+            </div>
+          </button>
+        </template>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-6 md:px-16 pb-20 bg-primary">
+    <div class="max-w-7xl mx-auto">
+      <div class="rounded-[32px] overflow-hidden relative">
+        <div class="absolute inset-0">
+          <img :src="selectedService.image" :alt="selectedService.name"
+            class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/85 to-primary/40"></div>
+
+        <div class="relative z-10 px-7 py-12 md:p-12 lg:p-16 max-w-3xl">
+          <p class="text-white/55 uppercase tracking-[0.25em] text-xs mb-4">Fast Quote</p>
+          <h3 class="text-3xl sm:text-5xl font-bold leading-tight">Ready to protect or transform your car?</h3>
+          <p class="mt-5 text-white/75 text-base sm:text-lg">
+            Send us your vehicle model + photos. We’ll recommend the best package and timeline.
+          </p>
+          <a href="https://wa.me/6588909220" target="_blank"
+            class="mt-7 inline-flex items-center justify-center bg-white text-black px-6 py-3 rounded-xl font-semibold hover:scale-105 transition">
+            WhatsApp +65 8890 9220
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div x-show="lightboxOpen" x-transition.opacity
+    class="fixed inset-0 z-[99999] bg-black/90 px-4 py-6 flex items-center justify-center"
+    style="display:none;">
+    <div class="relative max-w-6xl w-full">
+      <button @click="lightboxOpen = false"
+        class="absolute -top-12 right-0 text-white text-lg font-semibold hover:opacity-70">
+        Close
+      </button>
+
+      <img :src="selectedService.portfolio[currentPhoto]" alt="Portfolio Preview"
+        class="w-full max-h-[85vh] object-contain rounded-2xl">
+
+      <div class="flex items-center justify-between mt-5">
+        <button @click="prevPhoto()"
+          class="px-5 py-3 rounded-xl border border-white/15 hover:bg-white/10 transition">
+          ← Previous
+        </button>
+        <a href="https://wa.me/6588909220" target="_blank"
+          class="px-5 py-3 rounded-xl bg-white text-black font-semibold hover:scale-105 transition">
+          Fast Quote WhatsApp us now
+        </a>
+        <button @click="nextPhoto()"
+          class="px-5 py-3 rounded-xl border border-white/15 hover:bg-white/10 transition">
+          Next →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="st-site-footer"><div class="st-footer-inner"><a class="st-footer-brand" href="/shinytomato-uat/" aria-label="Shinytomato home"><img src="/shinytomato-uat/images/site-header-logo.png" alt="Shinytomato official logo"></a><div><div class="st-footer-links"><a href="/shinytomato-uat/protective-film/paint-protection-film.html">PPF</a><a href="/shinytomato-uat/protective-film/window-film/">Window Tint</a><a href="/shinytomato-uat/polish-coat/">Eco-Posh</a><a href="/shinytomato-uat/protective-film/vinyl-wrapping.html">Vinyl Wrap</a><a href="/shinytomato-uat/events/">Events</a><a href="/shinytomato-uat/automotive-concierge/">Automotive Concierge</a><a href="mailto:admin@shinytomato.com.sg">Email</a></div><div class="st-footer-social" aria-label="Shinytomato social media profiles"><a href="https://www.facebook.com/shinytomatoservices" target="_blank" rel="noopener noreferrer" aria-label="Follow Shinytomato on Facebook"><span class="st-footer-icon" aria-hidden="true">f</span><span>Facebook</span></a><a href="https://www.instagram.com/shinytomatoservices/" target="_blank" rel="noopener noreferrer" aria-label="Follow Shinytomato on Instagram"><span class="st-footer-icon" aria-hidden="true">◎</span><span>Instagram</span></a><a href="https://www.tiktok.com/@shinytomatosg" target="_blank" rel="noopener noreferrer" aria-label="Follow Shinytomato on TikTok"><span class="st-footer-icon" aria-hidden="true">♪</span><span>TikTok</span></a></div><small class="st-footer-address">1 Jalan Kilang Barat, One@Redhill Centre, #01-02, Singapore 159345</small><small class="st-footer-copy">© <span id="year">2026</span> Shinytomato Surface Protection Specialist · Singapore</small></div></div></footer>
+
+  <!-- Floating WhatsApp Button -->
+  
+
+  <script>
+    function servicePage() {
+      return {
+        mobileMenu: false,
+        lightboxOpen: false,
+        currentPhoto: 0,
+        selectedKey: "grooming",
+        services: [
+          {
+            key: "grooming",
+            name: "Grooming",
+            link: "/grooming",
+            whatsapp: "https://wa.me/6588909220",
+            image: "/images/eco-groom.png",
+            description: "Practical interior and exterior grooming service for regular maintenance, freshness and a clean presentable finish.",
+            packages: [
+              {
+                title: "Maintenance Groom",
+                tag: "Popular",
+                description: "A practical refresh package for regular upkeep and presentation.",
+                features: [
+                  "Exterior hand wash",
+                  "Tyre and rim clean",
+                  "Interior vacuum and wipe-down",
+                  "Glass cleaning"
+                ],
+                note: "Swipe for more"
+              },
+              {
+                title: "Interior Reset",
+                tag: "Cabin Focus",
+                description: "For drivers who want extra attention on cabin cleanliness and comfort.",
+                features: [
+                  "Detailed vacuum",
+                  "Dashboard and trim wipe-down",
+                  "Seats and touchpoint cleaning",
+                  "Odour refresh"
+                ],
+                note: "Tap to view details"
+              },
+              {
+                title: "Premium Groom",
+                tag: "Complete",
+                description: "A fuller grooming package for owners who want a cleaner and more detailed result.",
+                features: [
+                  "Exterior and interior deep clean",
+                  "Door jamb wipe",
+                  "Tyre dressing",
+                  "Finishing touch-up"
+                ],
+                note: "Open →"
+              }
+            ],
+            portfolio: [
+              "/images/eco-groom.png",
+              "/images/eco-posh.png",
+              "/images/ppf-service.JPG",
+              "/images/vinyl-wrapping.png"
+            ]
+          },
+          {
+            key: "polish-coat",
+            name: "Polish & Coat",
+            link: "/polish-coat",
+            whatsapp: "https://wa.me/6588909220",
+            image: "/images/eco-posh.png",
+            description: "Eco-Posh polishing and ceramic coating packages. Paint correction is part of the advanced polishing process under Eco-Posh Standard and above, and is not included in wax polishing or maintenance polishing.",
+            packages: [
+              {
+                title: "Gloss Boost",
+                tag: "Enhancement",
+                description: "For vehicles needing a cleaner, glossier and more refined paint appearance.",
+                features: [
+                  "Paintwork assessment",
+                  "Single-step enhancement",
+                  "Gloss improvement",
+                  "Protective top layer"
+                ],
+                note: "Tap to view details"
+              },
+              {
+                title: "Correct & Protect",
+                tag: "Recommended",
+                description: "A stronger package for owners looking to reduce defects and improve clarity.",
+                features: [
+                  "Multi-stage correction",
+                  "Defect reduction",
+                  "Surface prep",
+                  "Coating application"
+                ],
+                note: "Popular choice"
+              },
+              {
+                title: "Coating Maintenance",
+                tag: "Refresh",
+                description: "For coated cars needing decontamination and refreshed surface performance.",
+                features: [
+                  "Decontamination wash",
+                  "Coating-safe cleanse",
+                  "Hydrophobic refresh",
+                  "Gloss restoration"
+                ],
+                note: "Open →"
+              }
+            ],
+            portfolio: [
+              "/images/eco-posh.png",
+              "/images/ppf-service.JPG",
+              "/images/vinyl-wrapping.png",
+              "/images/eco-groom.png"
+            ]
+          },
+          {
+            key: "ppf",
+            name: "Paint Protection Film",
+            link: "/protective-film/paint-protection-film.html",
+            whatsapp: "https://wa.me/6588909220",
+            image: "/images/ppf-service.JPG",
+            description: "Clear film protection packages designed to help reduce chips, scratches and wear on key vehicle surfaces.",
+            packages: [
+              {
+                title: "High Risk Area",
+                tag: "Entry",
+                description: "Focused protection for the most exposed impact zones.",
+                features: [
+                  "Selected high-impact panels",
+                  "Clean edge installation",
+                  "Gloss finish retention",
+                  "Practical protection"
+                ],
+                note: "Good starter option"
+              },
+              {
+                title: "Full Frontal",
+                tag: "Most Asked",
+                description: "A stronger front-end protection option for daily driven vehicles.",
+                features: [
+                  "Bonnet coverage",
+                  "Front bumper protection",
+                  "Fender and mirror area",
+                  "Cleaner long-term maintenance"
+                ],
+                note: "Popular"
+              },
+              {
+                title: "Full Body PPF",
+                tag: "Maximum",
+                description: "Comprehensive film protection for owners who want the highest coverage.",
+                features: [
+                  "Whole body coverage",
+                  "Uniform protection appearance",
+                  "Paint preservation",
+                  "Premium ownership solution"
+                ],
+                note: "Open →"
+              }
+            ],
+            portfolio: [
+              "/images/ppf-service.JPG",
+              "/images/vinyl-wrapping.png",
+              "/images/eco-posh.png",
+              "/images/eco-groom.png"
+            ]
+          },
+          {
+            key: "vinyl",
+            name: "Vinyl Wrapping",
+            link: "/protective-film/vinyl-wrapping.html",
+            whatsapp: "https://wa.me/6588909220",
+            image: "/images/vinyl-wrapping.png",
+            description: "Aesthetic transformation service for colour change, accents, roof, bonnet, trim and dechrome applications.",
+            packages: [
+              {
+                title: "Accent Wrap",
+                tag: "Style",
+                description: "Small-area styling package for visual highlights and contrast.",
+                features: [
+                  "Bonnet or roof options",
+                  "Gloss or satin finishes",
+                  "Trim styling",
+                  "Neat finishing"
+                ],
+                note: "Tap to view details"
+              },
+              {
+                title: "Dechrome Package",
+                tag: "Popular",
+                description: "A clean stealth styling option for chrome delete on selected exterior trim.",
+                features: [
+                  "Window trim dechrome",
+                  "Grille accent wrapping",
+                  "Cleaner visual profile",
+                  "Modern premium look"
+                ],
+                note: "Popular choice"
+              },
+              {
+                title: "Full Body Wrap",
+                tag: "Transformation",
+                description: "Complete visual transformation for owners who want a distinct new appearance.",
+                features: [
+                  "Full body colour change",
+                  "Panel-by-panel wrap",
+                  "Finish customisation",
+                  "High visual impact"
+                ],
+                note: "Open →"
+              }
+            ],
+            portfolio: [
+              "/images/vinyl-wrapping.png",
+              "/images/ppf-service.JPG",
+              "/images/eco-posh.png",
+              "/images/eco-groom.png"
+            ]
+          },
+          {
+            key: "window-film",
+            name: "Window Film",
+            link: "/protective-film/window-film",
+            whatsapp: "https://wa.me/6588909220",
+            image: "/images/window-film.jpg",
+            description: "Heat, glare and comfort-focused window film solutions for a better cabin experience and cleaner appearance.",
+            packages: [
+              {
+                title: "Front Pair",
+                tag: "Basic",
+                description: "A practical option for improving comfort on the most used glass areas.",
+                features: [
+                  "Front side windows",
+                  "Cleaner cabin feel",
+                  "Reduced glare",
+                  "Neat installation"
+                ],
+                note: "Open →"
+              },
+              {
+                title: "Full Cabin Film",
+                tag: "Recommended",
+                description: "Balanced package for drivers who want a more complete comfort upgrade.",
+                features: [
+                  "Side and rear windows",
+                  "Heat comfort improvement",
+                  "Privacy enhancement",
+                  "Everyday usability"
+                ],
+                note: "Most practical"
+              },
+              {
+                title: "Premium Heat Control",
+                tag: "Premium",
+                description: "For owners prioritising stronger comfort and more refined driving experience.",
+                features: [
+                  "Higher comfort focus",
+                  "Glare reduction",
+                  "Cleaner finish",
+                  "Daily drive improvement"
+                ],
+                note: "Tap to view details"
+              }
+            ],
+            portfolio: [
+              "/images/window-film.jpg",
+              "/images/ppf-service.JPG",
+              "/images/vinyl-wrapping.png",
+              "/images/eco-posh.png"
+            ]
+          }
+        ],
+        selectedService: {},
+        init() {
+          this.updateService();
+        },
+        updateService() {
+          const found = this.services.find(item => item.key === this.selectedKey);
+          this.selectedService = found || this.services[0];
+          this.currentPhoto = 0;
+        },
+        openLightbox(index) {
+          this.currentPhoto = index;
+          this.lightboxOpen = true;
+        },
+        prevPhoto() {
+          if (!this.selectedService.portfolio?.length) return;
+          this.currentPhoto = (this.currentPhoto - 1 + this.selectedService.portfolio.length) % this.selectedService.portfolio.length;
+        },
+        nextPhoto() {
+          if (!this.selectedService.portfolio?.length) return;
+          this.currentPhoto = (this.currentPhoto + 1) % this.selectedService.portfolio.length;
+        }
+      }
+    }
+  </script>
+<script src="/shinytomato-uat/assets/site-header.js" defer></script><script type="module" src="/shinytomato-uat/assets/smooth-scroll.js?v=20261109-anchor-a75461ebe934"></script>
+<a class="st-wa-float" href="https://wa.me/6588909220" target="_blank" rel="noopener" aria-label="WhatsApp Shinytomato">WhatsApp ↗</a>
+</body>
+
+</html>
