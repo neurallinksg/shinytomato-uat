@@ -1,5 +1,3 @@
-import Lenis from "/shinytomato-uat/node_modules/lenis/dist/lenis.mjs";
-
 var style = document.createElement("style");
 style.textContent = [
   "html.lenis,html.lenis body{height:auto}",
@@ -23,6 +21,7 @@ var PREVENT_SELECTOR = [
 ].join(",");
 
 var active = null;
+var mounting = false;
 var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 if ("scrollRestoration" in history) {
@@ -94,7 +93,11 @@ function scrollToStart(lenis) {
     });
     return;
   }
-  lenis.scrollTo(0, { immediate: true });
+  if (lenis) {
+    lenis.scrollTo(0, { immediate: true });
+  } else {
+    window.scrollTo(0, 0);
+  }
 }
 
 function samePageHash(anchor) {
@@ -137,19 +140,22 @@ function onHashChange() {
   scrollToHash(active && active.lenis ? active.lenis : null, window.location.hash, false);
 }
 
-function mount() {
+function mountNativeOnly() {
   syncAnchorOffset();
-  if (active) return;
-
-  if (reduceMotion.matches) {
-    if (window.location.hash) {
-      afterLayout(function () {
-        scrollToHash(null, window.location.hash, true);
-      });
-    }
-    return;
+  if (window.location.hash) {
+    afterLayout(function () {
+      scrollToHash(null, window.location.hash, true);
+    });
   }
+  active = {
+    lenis: null,
+    destroy: function () {
+      active = null;
+    }
+  };
+}
 
+function mountWithLenis(Lenis) {
   markNativeScrollAreas();
   var lenis = new Lenis({
     duration: 1.1,
@@ -177,6 +183,33 @@ function mount() {
       active = null;
     }
   };
+}
+
+function mount() {
+  syncAnchorOffset();
+  if (active || mounting) return;
+
+  if (reduceMotion.matches) {
+    mountNativeOnly();
+    return;
+  }
+
+  mounting = true;
+  import("/shinytomato-uat/assets/lenis.mjs")
+    .then(function (mod) {
+      mounting = false;
+      if (active || reduceMotion.matches) return;
+      var Lenis = mod && (mod.default || mod.Lenis);
+      if (!Lenis) {
+        mountNativeOnly();
+        return;
+      }
+      mountWithLenis(Lenis);
+    })
+    .catch(function () {
+      mounting = false;
+      if (!active) mountNativeOnly();
+    });
 }
 
 function unmount() {

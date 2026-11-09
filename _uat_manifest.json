@@ -1,25 +1,30 @@
 {
   "mode": "build",
-  "timestamp": "2026-11-09T23:56:21.173377+08:00",
-  "candidate": "D:\\CursorProject\\SHINYTOMATO_PROJECT_RECORDS\\EVIDENCE\\uat-candidates\\candidate-20261109-235614",
+  "timestamp": "2026-11-10T00:20:50.326916+08:00",
+  "candidate": "D:\\CursorProject\\SHINYTOMATO_PROJECT_RECORDS\\EVIDENCE\\uat-candidates\\candidate-20261110-002030",
   "published_site": "D:\\CursorProject\\ShinyTomatoUAT",
   "publish_mode": "branch-root",
-  "previous_snapshot": "D:\\CursorProject\\SHINYTOMATO_BACKUPS\\uat-publish-pre-refresh-20261109-235614",
+  "previous_snapshot": "D:\\CursorProject\\SHINYTOMATO_BACKUPS\\uat-publish-pre-refresh-20261110-002030",
   "marker": {
-    "build_id": "20261109-235617",
-    "timestamp": "2026-11-09T23:56:17.556953+08:00",
+    "build_id": "20261110-002033",
+    "timestamp": "2026-11-10T00:20:33.434419+08:00",
     "base_path": "/shinytomato-uat",
     "source": "D:\\CursorProject\\ShinyTomatoV2",
-    "file_count": 165
+    "file_count": 166
   },
   "diff": {
-    "added": [],
+    "added": [
+      "assets/lenis.mjs"
+    ],
     "removed": [
       "_uat_manifest.json"
     ],
     "changed": [
       "404.html",
+      "about/index.html",
+      "assets/smooth-scroll.js",
       "automotive-concierge/index.html",
+      "corporate/index.html",
       "errors/400.html",
       "errors/401.html",
       "errors/403.html",
@@ -31,17 +36,25 @@
       "errors/502.html",
       "errors/503.html",
       "errors/504.html",
+      "events/index.html",
+      "grooming/index.html",
+      "index.html",
+      "inspection/index.html",
       "polish-coat/index.html",
+      "promotions/index.html",
       "protective-film/paint-protection-film.html",
       "protective-film/sunroof-headshield/index.html",
+      "protective-film/vinyl-wrapping.html",
       "protective-film/window-film/index.html",
       "protective-film/windshield-protect/index.htm",
+      "services/index.html",
+      "shop-now/index.html",
       "uat-build-marker.json"
     ],
-    "unchanged_count": 147
+    "unchanged_count": 136
   },
   "sync": {
-    "copied_count": 166,
+    "copied_count": 167,
     "removed_managed": [
       "_uat_manifest.json"
     ],
