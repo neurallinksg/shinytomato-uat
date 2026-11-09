@@ -1,4 +1,4 @@
-import Lenis from "/node_modules/lenis/dist/lenis.mjs";
+import Lenis from "/shinytomato-uat/node_modules/lenis/dist/lenis.mjs";
 
 var style = document.createElement("style");
 style.textContent = [
