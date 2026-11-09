@@ -1,57 +1,27 @@
 {
   "mode": "build",
-  "timestamp": "2026-11-10T00:20:50.326916+08:00",
-  "candidate": "D:\\CursorProject\\SHINYTOMATO_PROJECT_RECORDS\\EVIDENCE\\uat-candidates\\candidate-20261110-002030",
+  "timestamp": "2026-11-10T00:43:16.867842+08:00",
+  "candidate": "D:\\CursorProject\\SHINYTOMATO_PROJECT_RECORDS\\EVIDENCE\\uat-candidates\\candidate-20261110-004312",
   "published_site": "D:\\CursorProject\\ShinyTomatoUAT",
   "publish_mode": "branch-root",
-  "previous_snapshot": "D:\\CursorProject\\SHINYTOMATO_BACKUPS\\uat-publish-pre-refresh-20261110-002030",
+  "previous_snapshot": "D:\\CursorProject\\SHINYTOMATO_BACKUPS\\uat-publish-pre-refresh-20261110-004312",
   "marker": {
-    "build_id": "20261110-002033",
-    "timestamp": "2026-11-10T00:20:33.434419+08:00",
+    "build_id": "20261110-004315",
+    "timestamp": "2026-11-10T00:43:15.137924+08:00",
     "base_path": "/shinytomato-uat",
     "source": "D:\\CursorProject\\ShinyTomatoV2",
     "file_count": 166
   },
   "diff": {
-    "added": [
-      "assets/lenis.mjs"
-    ],
+    "added": [],
     "removed": [
       "_uat_manifest.json"
     ],
     "changed": [
-      "404.html",
-      "about/index.html",
-      "assets/smooth-scroll.js",
       "automotive-concierge/index.html",
-      "corporate/index.html",
-      "errors/400.html",
-      "errors/401.html",
-      "errors/403.html",
-      "errors/404.html",
-      "errors/408.html",
-      "errors/410.html",
-      "errors/429.html",
-      "errors/500.html",
-      "errors/502.html",
-      "errors/503.html",
-      "errors/504.html",
-      "events/index.html",
-      "grooming/index.html",
-      "index.html",
-      "inspection/index.html",
-      "polish-coat/index.html",
-      "promotions/index.html",
-      "protective-film/paint-protection-film.html",
-      "protective-film/sunroof-headshield/index.html",
-      "protective-film/vinyl-wrapping.html",
-      "protective-film/window-film/index.html",
-      "protective-film/windshield-protect/index.htm",
-      "services/index.html",
-      "shop-now/index.html",
       "uat-build-marker.json"
     ],
-    "unchanged_count": 136
+    "unchanged_count": 165
   },
   "sync": {
     "copied_count": 167,
