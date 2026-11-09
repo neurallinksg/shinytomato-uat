@@ -4,6 +4,9 @@ gh-pages-sim/
 # Local build metadata with absolute machine paths
 LAST_UAT_BUILD.json
 
+# Obsolete nested publish folder (root is the Pages document root)
+site/
+
 # OS / editor noise
 Thumbs.db
 Desktop.ini
